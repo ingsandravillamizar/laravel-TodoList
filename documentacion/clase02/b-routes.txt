@@ -1,0 +1,22 @@
+//Estas rutas son un grupo de rutas controladas por TodoController
+
+Route::controller(TodoController::class)->group(function(){
+    //Por defecto llama el metodo invoke
+    Route::get('todo','index');  // listar 
+    Route::get('todo/create','create'); // formulario nueva tarea
+    Route::get('todo/{task}','show');  //mostrarme la tarea
+});
+
+
+
+Rutas con parametros opcionales
+
+ Parametros opcionales
+ Route::get('cursos/show/{curso}/{categoria?}',function($curso,$categoria){
+    if ($categoria){
+         return "Vista del curso $curso, cat , $categoria";
+    }else{
+         return 'Vista del curso' ,  $curso, ' ,cat ' , $categoria;
+    }    
+    });
+ 

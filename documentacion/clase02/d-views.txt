@@ -1,0 +1,42 @@
+Las encontramos en resources-views
+
+los archivos los debemos llamar .blade.php
+
+desde el controlador llamamos directiva view(todo.index)  
+se ubica automaticamente en resources-views
+dentro del parentisis si llamo la ubicacion
+todo.index  ( ubique la carpeta todo y el archivo index)
+
+
+Podemos organizar por carpetas
+carpeta todo
+carpeta layouts
+
+Utilizacion sistema de plantillas: para reutilizar
+ejemplo: favicon, cabecera, stilos, footer nav , header
+creo el archivo template.blade.php 
+
+titulos dinamicos: directiva de blade  @yield('title')
+en el body:   @yield('content')
+
+
+Nos vamos a los archivos de todo y extendemos
+
+@extends('layouts.template')
+
+@section('title', 'Bienvenido')
+
+@section('content')
+    <h1>Bienvenido a Todo List</h1>
+@endsection
+
+
+Se debe tratar en las vistas no usar mucho php para hacer mas legible lo que estamos programando
+entonces cambiamos
+
+<?php echo $task; ?>
+por:
+
+<p>
+    {{ $task }}
+</p>

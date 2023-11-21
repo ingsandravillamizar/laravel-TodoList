@@ -1,0 +1,8 @@
+Por cada tabla en la base de datos deberiamos tener un modelo,
+Gracias a estos Moelos podemos trabajar con Eloquent y adicionar,modificar, eliminar, consultar la tabla en la bd
+
+Los modelos se toman como objetos  van en SINGULAR
+
+
+
+  

@@ -1,0 +1,27 @@
+php artisan tinker
+use App\models\Task;
+
+
+Consultar todos
+$curso = Task::all();
+
+
+Consultar Prioridad Alta
+$curso = Task::where('priority','Alto')->get();
+
+
+Consultar Prioridad Normal ordenados
+$curso = Task::where('priority','Normal')->orderBy('id', 'desc')->get();
+
+
+//traer el primer de prioridad Alta
+ $curso = Task::where('priority','Alto')->orderBy('id', 'asc')->first();
+
+
+ //Campos personalizados
+ $curso = Task::select('id','name')->get();
+ $curso = Task::select('id','name')->where('priority','Bajo')->get();
+ $curso = Task::select('id','name as nombre')->where('priority','Bajo')->get();
+ $curso = Task::select('id','name as nombre')->where('id',200)->get();    o   $curso = Task::find(200);
+
+ $curso = Task::where('name', 'like', '%emp%')->get();

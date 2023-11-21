@@ -1,0 +1,23 @@
+Tinker:   php artisan tinker
+use App\models\Task;
+
+
+Para insertar un dato  $task = new Task;
+$task->name = 'Comprar viveres';
+$task->description = 'Seguir la lista de viveres a comprar';
+$task->priority = 2;
+$task      // Me muestra los datos que guardamos en el ojeto task
+$task->save();   devuelve true si guardo
+
+
+$task;
+= App\Models\Task {#6290    
+    name: "Comprar viveres",
+    description: "Seguir la lista de viveres a comprar",
+    priority: 2,
+    updated_at: "2023-11-20 16:26:29",
+    created_at: "2023-11-20 16:26:29",
+    id: 1,
+  }
+
+  Si verificamos en la base de datos encontramos el registro guardado

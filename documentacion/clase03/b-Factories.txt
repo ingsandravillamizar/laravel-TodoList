@@ -1,0 +1,25 @@
+Es mas eficiente utilizar Factories para generar grandes cantidades de registros en la base de datos
+
+
+php artisan make:factory TaskFactory
+
+Se ubican en : database/factories/
+
+
+php artisan make:factory TaskFactory --model=Task    //crea un factorie que utiliza el modelo Task
+
+
+    public function definition(): array
+    {
+        return [
+             'name'=> $this->faker->sentence(),
+             'description'=> $this->faker->paragraph(),
+             'priority'=> $this->faker->randomElement([1,2,3]),
+        ];
+    }
+
+    Llamar este factory desde el seeder de task:    Task::factory(200)->create();  
+    php artisan migrate:fresh --seed
+
+
+    https://fakerphp.github.io/

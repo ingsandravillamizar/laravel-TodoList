@@ -1,0 +1,39 @@
+php artisan make:controller HomeController 
+
+
+__invoke
+public function __invoke(){
+    return "Hola desde el controlador";
+  }
+
+
+
+ public function index(){
+        return view("todo.index");  //se ubica en views   carpeta todo archivo index
+    }
+
+
+ //Recibe la tarea que vaa a mostrar $task esto va ligado con la ruta:   Route::get('todo/{task}','show');  //mostrarme la tarea
+ public function show($task){
+        return view('todo.show', compact('task'));
+ }
+ El controlador debe pasarle el dato a la vista y lo puede hacer con un array asociativo: puedo pasar varios parametros
+ return view('todo.show',['tarea'=>$task]);
+ lo que le envio es realmente 'tarea' no $task 
+ El controlador lo recibe como $task lo envia como tarea
+ y en la vista lo puedo imprimir como <?php echo $tarea; ?>
+
+ tarea la podemos llamar task  se hace como tarea para poder comprender como funciona la transferencia de datos entre la ruta, controlador y vista
+
+ ejemplo de envio de varios parametros
+
+ public function show($task){
+ return view ('todo.show', [
+     'task'=>$task,
+     'titulo' => "hola",
+     'desc' => "assdd"
+ ]);
+ }
+
+ Compactar:  cuando voy a llamar el parametro igual   'task' =>$task
+ return view('todo.show', compact('task'));

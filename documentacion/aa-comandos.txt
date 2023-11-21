@@ -1,0 +1,36 @@
+www.laravel.com
+
+
+Como crear un Controlador:
+    php artisan make:controller HomeController 
+
+
+Como correr el servidor:  php artisan serve
+
+
+
+Como crear un modelo:         php artisan make:model Task    //EN SINGULAR
+Como crear una migracion:     php artisan make:migration create_tasks_table
+migracion con modificacion:   php artisan make:migration name_to_tasks_table //EN PLURAL
+migracion nuevo campo:        php artisan make:migration add_priority_to_tasks_table
+
+como ejecutar la migracion      :  php artisan migrate
+como hacer rollbakc             :  php artisan migrate:rollback
+Eliminar todo y volver a crear  :  php artisan migrate:fresh
+
+
+Crear un seeder:   php artisan make: seeder UserSeeder
+Ejecutar  un seeder:  php artisan db:seed
+
+Eliminar todo y volver a crear   y ejecutar seeders:   php artisan migrate:fresh --seed
+
+
+
+Crear un factory: 
+php artisan make:factory TaskFactory
+
+
+
+
+
+Ojo Del curso de laravel de platzi:  php artisan make:model Category -mf    crea en un solo paso la tabla , la migracion y el factory

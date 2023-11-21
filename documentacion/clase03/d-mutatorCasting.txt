@@ -1,0 +1,18 @@
+Eloquent Mutators & Casting
+
+Trabajan con los modelos   app/Models
+Mutators:  Antes de guardar la info en la base de datos se le da un FORMATO
+
+
+
+ protected function name():Attribute
+    {
+        return Attribute::make(
+            get:function($value){ //Accesor     //cuando lea me lo va a colocar la primer en mayuscula
+                return ucfirst($value);
+            },
+            set:function($value){ //Mutador
+                return strtolower($value);    // lo convierte a minuscula antes de guardar:  no importa como lo digite el usuario lo guardara minuscula
+            }
+        );
+    }

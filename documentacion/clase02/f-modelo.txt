@@ -1,0 +1,7 @@
+php artisan make:model Task
+
+Con esta instruccion nos crea el modelo de Task y 
+con esto ya nos podemos comunicar con la tabla
+
+Maneja ORM Eloquent
+use Illuminate\Database\Eloquent\Model;

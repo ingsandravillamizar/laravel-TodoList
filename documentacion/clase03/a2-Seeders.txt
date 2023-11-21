@@ -1,0 +1,47 @@
+database/seeders
+Permiten agregar informacion de prueba a la base de datos
+
+
+PODEMOS TRABAJAR EN EL SEMILLERO BASE ubicado en database/seeders
+DatabaseSeeder.php =  Semillero base
+
+
+use App\Models\Task;
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+
+        $task = new Task();
+        $task->name = 'Crear Pag de validacion';
+        $task->description = 'xxxxxxxxxxxxxxxxxxxxxxxxx';
+        $task->priority = 1;
+        $task->save();
+
+        puedo colocar tantos como quiera....
+
+    }
+}
+
+
+ejecutar
+
+php artisan db:seed
+
+
+Esto a modo de ejercicio:  LO CORRECTO ES TENER UN SEEDER POR CADA TABLA DEL SISTEMA
+
+
+php artisan make:seeder UserSeeder
+php artisan make:seeder TaskSeeder
+
+
+Pasamos el seeder donde corresponde.
+Y desde el DatabaseSeeder llamamos los seeder que vamos a ejecutar    $this->call(TaskSeeder::class);
+
+Eliminar todo y volver a crear   y ejecutar seeders:   php artisan migrate:fresh --seed

@@ -1,0 +1,33 @@
+dentro de la carpeta database encontramos
+migrations, factories y seeders
+
+la carpeta migrations  contiene todas las instrucciones para la creacion, modificacion de las tablas de la base de datos
+
+Para crear archivos de migracion :    php artisan make:migration 
+
+Para crear una tabla llamada task
+	php artisan make:migration task
+	php artisan make:migration create_tasks_table   //seguir la convencion
+
+
+Para ejecutar la migracion
+	php artisan migrate
+
+Para devolverme de version 
+	 php artisan migrate:rollback
+
+
+//eliminar todo y volver a crear
+	php artisan migrate:fresh
+
+
+
+
+
+//otras instrucciones
+php artisan make:migration name_to_tasks_table  //para modificar el tamaño del nombre a la tabla taks
+php make:migration add_priority_to_tasks_table
+
+
+ enum es un tipo de dato que solo vemos en mysql, y me permite crear solo datos dentro del rango que se le indique:
+ $table->enum('priority',['Bajo','Normal','Alto'])->after('description');
