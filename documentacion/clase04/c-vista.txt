@@ -1,0 +1,19 @@
+En la vista Index
+
+Asi es como se pueden visualizar los datos:
+  <ul>
+        @foreach($tasks as $task)
+            <li>{{$task->name}}</li>
+        @endforeach
+ </ul>
+
+  {{ $tasks->links() }}       // para que podamos ver por paginas
+
+
+
+
+  //viculo para crear nueva tarea:  <a href="todo/create">"Crear nueva tarea"</a>
+  si le coloco nombre a la ruta seria:    <a href="{{route('todo.create')}}">"Crear nueva tarea"</a>
+
+
+  // vinculo para mostrar detalles de una tarea:      <a href="{{ route('todo.show', $task) }}">

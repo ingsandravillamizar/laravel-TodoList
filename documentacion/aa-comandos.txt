@@ -1,6 +1,8 @@
 www.laravel.com
 
 
+Como crear un proyecto    laravel new nombreProyecto
+
 Como crear un Controlador:
     php artisan make:controller HomeController 
 

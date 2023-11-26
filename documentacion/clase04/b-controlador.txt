@@ -1,0 +1,20 @@
+ 
+ 
+ VISUALIZAR  en  http://127.0.0.1:8000/todo
+
+        En el controlador , en el metodo index que llama la vista inicial  
+        
+        $tasks = Task::all();    //acceder a todos los datos de la tabla de tareas
+        return view("todo.index",compact('tasks'))
+
+
+
+
+Paginacion:
+        $tasks = Task::paginate(10);
+        http://127.0.0.1:8000/todo?page=3
+
+
+
+
+ 

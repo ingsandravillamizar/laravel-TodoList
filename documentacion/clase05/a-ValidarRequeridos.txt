@@ -1,0 +1,16 @@
+   
+   En el store de todo controller validamos que todos los datos sean requeridos
+   
+   Validar :  los campos obligatorios
+       $request->validate([
+            'name'=> 'required',
+            'description'=> 'required',
+            'priority'=> 'required'
+       ]);
+
+
+     Para mostrar el error en la vista de create
+
+       @error('name')
+                        {{ $message }}
+                    @enderror

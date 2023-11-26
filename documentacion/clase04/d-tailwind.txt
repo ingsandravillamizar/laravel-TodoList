@@ -1,0 +1,5 @@
+https://tailwindcss.com/
+https://tailwindcss.com/docs/installation/play-cdn
+
+Copiamos el script en la plantilla de layouts template.blade.php
+  <script src="https://cdn.tailwindcss.com"></script>

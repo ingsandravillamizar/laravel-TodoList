@@ -1,0 +1,11 @@
+Route::controller(TodoController::class)->group(function(){
+    //Por defecto llama el metodo invoke
+    Route::get('todo','index')->name('todo');  // listar 
+    Route::get('todo/create','create')->name('todo.create') ; // formulario nueva tarea
+    Route::get('todo/{task}','show')->name('todo.show') ;  //mostrarme la tarea
+});
+
+
+
+Se recomienda colocarle nombre a cada ruta, la forma de hacerlo es:  ->name('todo');  Ejemplo
+y en el index debo cambiar la forma como llamo la ruta en el link :    <a href="{{route('todo.create')}}">"Crear nueva tarea"</a>

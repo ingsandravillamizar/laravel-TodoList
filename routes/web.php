@@ -57,8 +57,13 @@ Route::get('cursos/show/{curso}/{categoria?}',function($curso,$categoria=null){
 //Estas rutas son un grupo de rutas controladas por TodoController
 Route::controller(TodoController::class)->group(function(){
     //Por defecto llama el metodo invoke
-    Route::get('todo','index');  // listar 
-    Route::get('todo/create','create'); // formulario nueva tarea
-    Route::get('todo/{task}','show');  //mostrarme la tarea
+    Route::get('todo','index')->name('todo.index');  // listar 
+    Route::get('todo/create','create')->name('todo.create') ; // formulario nueva tarea
+    Route::get('todo/{task}','show')->name('todo.show') ;  //mostrarme la tarea
+
+    Route::post('todo', 'store')->name('todo.store');           //Para Guardar
+    Route::get('todo/{task}/edit', 'edit')->name('todo.edit');  //Para Editar
+    Route::put('todo/{task}', 'update')->name('todo.update');   
 });
 
+ 
