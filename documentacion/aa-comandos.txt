@@ -36,3 +36,20 @@ php artisan make:factory TaskFactory
 
 
 Ojo Del curso de laravel de platzi:  php artisan make:model Category -mf    crea en un solo paso la tabla , la migracion y el factory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Clase 5
+Uso de request  php artisan make:request StoreTask

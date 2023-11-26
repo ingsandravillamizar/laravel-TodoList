@@ -11,6 +11,17 @@ class Task extends Model
 {
     use HasFactory;
 
+    // protected $fillable = ['name', 'description', 'priority'];
+    protected $guarded = ['_token'];
+
+
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    
     // protected function priority():Attribute{
     //     return Attribute::make(
     //         get:function($value){

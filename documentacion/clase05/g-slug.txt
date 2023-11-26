@@ -1,0 +1,21 @@
+    Para url amigable y evitar que el uuario invetigue rutas, si dejamo por ejemplo el numero 
+    http://127.0.0.1:8000/todo/3
+    http://127.0.0.1:8000/todo/sunt-sit-voluptatem-similique-quia
+    
+    
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+
+    Se modifica la migracion para tener un nuevo campo slug
+
+     $table->string('slug', 100)->unique(); //vachar    ojo que crea un sslug peron no basado en el name
+
+    Se modifica el factory para que genere datos en ese campo
+    'slug' => $this->faker->slug(),
+
+
+    se genera nuevamente la migracion
+    php artisan migrate:refresh --seed

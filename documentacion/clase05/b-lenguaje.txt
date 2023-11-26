@@ -1,0 +1,15 @@
+php artisan lang:publish
+
+Encontramos la carpeta lang y dentro de esta en: 
+Estos archivos son para los mensajes del sistema que desarrollemos
+
+Para pasarlo a Español
+
+https://laravel-lang.com/index_md.html
+
+composer require --dev laravel-lang/common
+
+php artisan lang:add es
+
+en la carpeta app config app.php variable  'local' =>  'en',
+pasarlo a es

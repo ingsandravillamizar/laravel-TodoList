@@ -1,0 +1,5 @@
+Route::resource('todo', TodoController::class);
+Con esto se generan todas las rutas
+
+php artisan route:list
+Me lista todas las rutas que tengo

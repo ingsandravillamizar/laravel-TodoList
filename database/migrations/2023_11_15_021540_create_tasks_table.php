@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function(Blueprint $table){
             $table->id();
             $table->string('name',50);  //varchar 255 caracteres, para ajustarlo podemos colocarle un tamaño de 100
+            $table->string('slug', 100)->unique(); //vachar
             $table->text('description');
             $table->timestamps();
         });

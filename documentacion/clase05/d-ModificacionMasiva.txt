@@ -1,0 +1,30 @@
+       
+       En ves  de :
+       // $task = new Task();
+        // $task->name = $request->name;
+        // $task->description = $request->description;
+        // $task->priority = $request->priority;
+        // $task->save();
+       
+       
+       Hacemos  esto
+        $task = Task::create([
+            'name' => $request->name,
+             'description' => $request->description,
+             'priority' => $request->priority
+         ]);
+
+
+       y resumido podemos reemplazar el codigo anterior por esto    $task = Task::create($request->all());    
+
+       si ejecutamos asi genera error porque lo campos estan protegidos de actulizacion masiva
+
+         En el modelo:  Camposs que autorizo se puedean actualizar de manera masiva
+         protected $fillable = ['name', 'description', 'priority'];   fillable los que si puedo modificar
+
+         cuando son muchos campos es mass facil decirle que campo es el que no puedo modificar
+         protected $guarded = ['_token', 'status', 'delete_ad'  ];
+
+
+
+         

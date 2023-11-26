@@ -20,32 +20,32 @@ Route::get('/', function () {
 });
 
 
-Route::get('home', HomeController::class);
-Route::get('home', ['HomeController::class', 'index']);
+// Route::get('home', HomeController::class);
+// Route::get('home', ['HomeController::class', 'index']);
 
-Route::get('ejemplo',function(){
-    echo "hola desde la ruta de ejemplo";
-});
+// Route::get('ejemplo',function(){
+//     echo "hola desde la ruta de ejemplo";
+// });
 
-Route::get('cursos/show',function(){
-    echo "Vista de  cursos";
-});
-Route::get('cursos/create',function(){
-    return "Formuario para crear un nuevo curso";
-});
-Route::get('cursos/show/{curso}',function($curso){
-    return "Vista del curso $curso";
-});
+// Route::get('cursos/show',function(){
+//     echo "Vista de  cursos";
+// });
+// Route::get('cursos/create',function(){
+//     return "Formuario para crear un nuevo curso";
+// });
+// Route::get('cursos/show/{curso}',function($curso){
+//     return "Vista del curso $curso";
+// });
 
-Route::get('cursos/show/{curso}/{categoria?}',function($curso,$categoria=null){
-   if($categoria){
-    return "Vista del curso $curso, categoría , $categoria";
-   }else{
-    return "Vista del curso $curso ";
-   }
+// Route::get('cursos/show/{curso}/{categoria?}',function($curso,$categoria=null){
+//    if($categoria){
+//     return "Vista del curso $curso, categoría , $categoria";
+//    }else{
+//     return "Vista del curso $curso ";
+//    }
     
    
-});
+// });
 
 // // Parametros opcionales
 // Route::get('cursos/show/{curso}/{categoria}',function($curso,$categoria){
@@ -63,7 +63,10 @@ Route::controller(TodoController::class)->group(function(){
 
     Route::post('todo', 'store')->name('todo.store');           //Para Guardar
     Route::get('todo/{task}/edit', 'edit')->name('todo.edit');  //Para Editar
-    Route::put('todo/{task}', 'update')->name('todo.update');   
+    Route::put('todo/{task}', 'update')->name('todo.update');  
+    Route::delete('todo/{task}', 'destroy')->name('todo.destroy');
 });
+
+// Route::resource('todo', TodoController::class);
 
  

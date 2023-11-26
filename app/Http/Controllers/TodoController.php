@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTask;
+use App\Http\Requests\UpdateTask;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
-   
-
     public function index(){
         $tasks = Task::paginate(20);
         return view("todo.index",compact('tasks'));
@@ -23,42 +23,30 @@ class TodoController extends Controller
         return view('todo.create');
     }
 
-
-
-    public function store(Request $request){
-
-        //Validar :  los campos obligatorios
-       $request->validate([
-            'name'=> 'required',
-            'description'=> 'required',
-            'priority'=> 'required'
-       ]);
-
-        $task = new Task();
-        $task->name = $request->name;
-        $task->description = $request->description;
-        $task->priority = $request->priority;
-
-
-
-        
-        $task->save();
+    public function store(StoreTask $request){
+        $task = Task::create($request->all());
+       // return $request->all();
         return redirect()->route('todo.show', $task);
     }
 
     public function edit(Task $task){
-        // return $task;
         return view('todo.edit', compact('task'));
     }
-   
 
+    public function update(UpdateTask $request, Task $task){
+        // $task->name = $request->name;
+        // $task->description = $request->description;
+        // $task->priority = $request->priority;
+        // $task->save();
 
-    public function update(Request $request, Task $task){
-        $task->name = $request->name;
-        $task->description = $request->description;
-        $task->priority = $request->priority;
+        //$task = Task::updated($request->all());
+        $task->update($request->all());
+         return redirect()->route('todo.show', $task);
+        
+    }
 
-        $task->save();
-        return redirect()->route('todo.show', $task);
+    public function destroy(Task $task){
+        $task->delete();
+        return redirect()->route('todo.index');
     }
 }

@@ -1,0 +1,13 @@
+    
+    Ruta
+    
+    Route::delete('todo/{task}', 'destroy')->name('todo.destroy');
+
+    Controlador
+    public function destroy(Task $task){
+        $task->delete();
+        return redirect()->route('todo.index');
+    }
+
+
+    Formulario

@@ -1,16 +1,43 @@
    
    En el store de todo controller validamos que todos los datos sean requeridos
    
-   Validar :  los campos obligatorios
+  //Validar :  los campos obligatorios
        $request->validate([
-            'name'=> 'required',
-            'description'=> 'required',
-            'priority'=> 'required'
-       ]);
+        'name'=> ['required','min: 3', 'min: 100'],
+        'description'=>'required|min:5',
+        'priority'=> 'required'
+        ]);
 
+
+     Tambien podemos hacerlo asi:  'name'=> ['required','min: 3', 'max: 100'],  o  'name'=>  'required|min: 3|max: 100' ,
 
      Para mostrar el error en la vista de create
 
        @error('name')
-                        {{ $message }}
-                    @enderror
+           {{ $message }}
+       @enderror
+
+     para el select:  <option value="" disabled selected>Seleccionar</option>
+
+     // En el value de cada input del formulario colocamos lo siguiente para no perder el valor
+        cuando algun otro campo no passo la validacion
+
+        value="{{ old("name")}}"
+       
+
+
+       Existen muchas otras reglas de validacion
+       https://laravel.com/docs/10.x/validation#main-content
+
+
+
+     En la vista de edit  
+     value="{{ old("name", $task->name) }}
+     Porque ya teniamos que en el valor colocabamos el valor de la base de datos, pero no queremos que el usuario pierda el nuevo
+     valor asi no cumpla con los datos requeridos: con el fin de que tenga oportunidad de corregir
+     Necesitamos que de entrada nos coloque en valor el nombre de la base de datos y no pierda el valor que el ussuario quiere modificar
+
+
+
+     TODO esto finalmente queda dentro de las reglas del request que creemos en el apartado C
+     con el fin de tener el codigo mas limpio en el controlador
