@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
@@ -15,44 +16,11 @@ use Illuminate\Support\Facades\Route;
 | Route::metodo('ruta',accion)
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function(){
+    return view('home');
+})->name('home');  //listar los todo's
 
 
-// Route::get('home', HomeController::class);
-// Route::get('home', ['HomeController::class', 'index']);
-
-// Route::get('ejemplo',function(){
-//     echo "hola desde la ruta de ejemplo";
-// });
-
-// Route::get('cursos/show',function(){
-//     echo "Vista de  cursos";
-// });
-// Route::get('cursos/create',function(){
-//     return "Formuario para crear un nuevo curso";
-// });
-// Route::get('cursos/show/{curso}',function($curso){
-//     return "Vista del curso $curso";
-// });
-
-// Route::get('cursos/show/{curso}/{categoria?}',function($curso,$categoria=null){
-//    if($categoria){
-//     return "Vista del curso $curso, categoría , $categoria";
-//    }else{
-//     return "Vista del curso $curso ";
-//    }
-    
-   
-// });
-
-// // Parametros opcionales
-// Route::get('cursos/show/{curso}/{categoria}',function($curso,$categoria){
-//     return "Vista del curso $curso, cat , $categoria";
- // return 'Vista del curso' ,  $curso, ' ,cat ' , $categoria;
-//  });
- 
 
 //Estas rutas son un grupo de rutas controladas por TodoController
 Route::controller(TodoController::class)->group(function(){
@@ -69,4 +37,6 @@ Route::controller(TodoController::class)->group(function(){
 
 // Route::resource('todo', TodoController::class);
 
- 
+
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');

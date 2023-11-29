@@ -1,0 +1,24 @@
+Me voy a config  mail.php
+
+mailtrap.com
+Servicio de correo electronico para pruebas:  Crear cuenta en mailtrap
+
+
+MyInbox  BUscar las credencialess para laravel 9 y pegarlas en el .env
+
+
+Debo generar el archivo para poder enviar correos
+php artisan make:mail ContactanosMailable,   essto me lo crea en Mail
+
+Debo crear el controlador
+
+Debo crear en las vista una carpeta emails y dentro de este el formulario que sera el cuerpo del mail
+
+Debo configurar las rutas:  Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
+ 
+
+
+
+
+

@@ -15,12 +15,12 @@
 
 </head>
 <body>
-    <!-- header
-    nav
-    -->
-     @yield('content')
-    
-    <!-- footer
-    script :si voy a utilizar scripts-->
+    <!-- header -->
+    @include('layouts.partials.header')
+    <!-- nav -->
+    @yield('content')
+    <!-- footer -->
+    @include('layouts.partials.footer')
+    <!-- script -->
 </body>
 </html>

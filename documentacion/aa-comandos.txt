@@ -5,7 +5,7 @@ Como crear un proyecto    laravel new nombreProyecto
 
 Como crear un Controlador:
     php artisan make:controller HomeController 
-
+    php artisan make:controller ContactanosController
 
 Como correr el servidor:  php artisan serve
 

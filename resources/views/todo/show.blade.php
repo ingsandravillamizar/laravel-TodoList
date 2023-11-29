@@ -4,10 +4,11 @@
 
 @section('content')
 
-    <h1>Tarea numero {{ $task->id }}</h1>
-    <p> Nombre {{ $task->name }}</p>
-    <p> Descripción {{ $task->description }}</p>
-    <p> Prioridad {{ $task->priority }}</p>
+    <h1>Tarea numero: {{ $task->id }}</h1>
+    <p> Nombre      : {{ $task->name }}</p>
+    <p> Slug        : {{ $task->slug }}</p>
+    <p> Descripción : {{ $task->description }}</p>
+    <p> Prioridad   : {{ $task->priority }}</p>
     <p> Fecha de creación:  {{ $task->created_at }}</p>
 
 

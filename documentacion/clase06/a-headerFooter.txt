@@ -1,0 +1,12 @@
+Se crea dentro de lass vistas  resources/views/layouts
+la carpeta partial  y se crean el footer y header blade.php
+
+se deben crear las rutas
+
+
+se deben crear las vistas  home   contactanos
+
+
+se debe crear el controlador  ContactanosController
+php artisan make:controller ContactanosController
+

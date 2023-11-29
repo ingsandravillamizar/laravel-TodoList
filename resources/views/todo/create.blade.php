@@ -21,6 +21,14 @@
                 @enderror
             </p>
             <p>
+                    <label for="slug">slug</label>
+                    <input type="text" name="slug" class="form-control" placeholder="Ingrese el slug" value="{{ old("slug")}}">
+                    @error('slug')
+                        {{ $message }}
+                    @enderror
+            </p>
+
+            <p>
                 <label for="description">Descripción</label>
                 <textarea class= "form-control" name="description" id="" cols="30" rows="5" > {{ old("description") }} </textarea>
                 @error('description')

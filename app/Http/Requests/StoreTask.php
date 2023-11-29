@@ -23,6 +23,7 @@ class StoreTask extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:100',
+            'slug' => 'required|min:5|max:60',
             'description' => 'required|min:20',
             'priority' => 'required'
         ];
